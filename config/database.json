@@ -1,0 +1,33 @@
+{
+  "lastIndex": 4,
+  "entities": [
+    {
+      "id": 0,
+      "name": "Gan356 Air SM",
+      "description": "Magnets in AirSM will not drop, and their positions will be more precise with the Magnets-Snap-On design. With the use of 3mm*2mm magnets, the handfeel will be more stable and more comfortable. P.S. This design is brand new for the AirSM.",
+      "imageUrl": "https://ae01.alicdn.com/kf/HTB1CSddXRxRMKJjy0Fdq6yifFXa6/Gan-356-Air-SM-3x3-Black-Magic-cube-GAN-Air-SM-Magnetic-3x3x3-Speed-cube-gans.jpg",
+      "difficultyLevel": 3
+    },
+    {
+      "id": 1,
+      "name": "Eco-Dark",
+      "description": "Magnets in Eco-Dark will not drop, and their positions will be more precise with the Magnets-Snap-On design. With the use of 3mm*2mm magnets, the handfeel will be more stable and more comfortable. P.S. This design is brand new for the Eco-Dark.",
+      "imageUrl": "https://thingsidesire.com/wp-content/uploads/2018/06/Eco-Dark-Rubik%E2%80%99s-Cube2.jpg",
+      "difficultyLevel": 6
+    },
+    {
+      "id": 2,
+      "name": "Rubik Cube",
+      "description": "Standard 3x3 Rubik's cube",
+      "imageUrl": "https://www.vermontcountrystore.com/ccstore/v1/images/?source=/file/v2382438315417247454/products/56423.main.png&height=500&width=500&quality=0.88",
+      "difficultyLevel": 3
+    },
+    {
+      "id": 3,
+      "name": "Test Cube",
+      "description": "Test",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61KwkIgpcmL._SL1000_.jpg",
+      "difficultyLevel": 5
+    }
+  ]
+}
