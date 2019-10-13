@@ -1,25 +1,22 @@
-const cubeModel = require('../models/cube');
+const cubeModel = require('../models/models').cubeModel;
 
 function index(req, res, next) {
-    // cubeModel.getAll().then(cubes => {
-    //     const { search = null, from = null, to = null } = { ...req.query };
-    //     if (search) {
-    //         cubes = cubes.filter(c => c.name.includes(search));
-    //     }
+    const { search = null, from = null, to = null } = { ...req.query };
+    let query = {};
+    if (search) {
+        query = { name: { $regex: search } }
+    }
 
-    //     if (from) {
-    //         cubes = cubes.filter(c => c.difficultyLevel >= from);
-    //     }
-        
-    //     if (to) {
-    //         cubes = cubes.filter(c => c.difficultyLevel <= to);
-    //     }
-        
-    //     res.render('index.hbs', { cubes, search, from, to });
-    // }).catch(next);
+    if (from) {
+        query = { ...query, difficultyLevel: { $gte: from } };
+    }
 
-    cubeModel.find().then(cubes => {
-        res.render('index.hbs', { cubes });
+    if (to) {
+        query.difficultyLevel = { ...query.difficultyLevel, $lte: to };
+    }
+
+    cubeModel.find(query).then(cubes => {
+        res.render('index.hbs', { cubes, search, from, to });
     })
 }
 

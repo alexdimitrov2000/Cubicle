@@ -1,4 +1,4 @@
-const cubeModel = require('../models/cube');
+const { cubeModel } = require('../models/models');
 
 function getCreate(req, res) {
     res.render('create.hbs');
@@ -13,13 +13,11 @@ function postCreate(req, res) {
     });
 }
 
-function details(req, res) {
+function details(req, res, next) {
     let cubeId = req.params.id;
-    cubeModel.findById(cubeId, function (err, cube) {
-        if (err) console.error(err);
-
+    cubeModel.findById(cubeId).populate('accessories').then((cube) => {
         res.render('details.hbs', { cube });
-    });
+    }).catch(next);
 }
 
 module.exports = {

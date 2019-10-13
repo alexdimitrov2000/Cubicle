@@ -15,6 +15,7 @@
         <li><img class="logo" src="/images/logo.png"></li>
         <li><a href="/">Browse</a></li>
         <li><a href="/create">Add a Cube</a></li>
+        <li><a href="/create/accessory">Add Accessory</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </header>
@@ -25,6 +26,19 @@
         <p><span>Description:</span> {{cube.description}}</p>
         <p><span>Difficulty level:</span> {{cube.difficultyLevel}}</p>
         <a class="btn" href="/">Back</a>
+      </div>
+      <h2>Accessories</h2>
+      <div class="accessories">
+        {{#each cube.accessories}}
+          <div class="accessory">
+            <img src="{{this.imageUrl}}" alt="stickerName">
+            <h3>{{this.name}}</h3>
+            <p>{{this.description}}</p>
+          </div>
+        {{else}}
+          <h3 class="italic">This cube has no accessories yet...</h3>
+          <a class="btn" href="/attach/accessory/{{cube.id}}">Attach an accessory</a>
+        {{/each}}
       </div>
     </main>
   </div>

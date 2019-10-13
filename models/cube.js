@@ -3,17 +3,39 @@ const mongoose = require('mongoose');
 const cubeModelSchema = new mongoose.Schema({
     name: {
         type: String,
+        required: true
+    },
+    description: {
+        type: String,
         required: true,
         validate: {
             validator: function(value) {
-                return value.length >= 2;
+                return value.length <= 70;
             },
-            message: props => `${props.value} should be at least 2 characters long.`
+            message: props => `${props.value} should be maximum 70 characters long.`
         }
     },
-    description: String,
-    imageUrl: String,
-    difficultyLevel: Number
+    imageUrl: {
+        type: String,
+        required: true,
+        validate: {
+            validator: function(value) {
+                return /^(https|http):\/\/.+$/.test(value);
+            },
+            message: props => `${props.value} should start either with 'https' or with 'http'.`
+        }
+    },
+    difficultyLevel: {
+        type: Number,
+        required: true,
+        validate: {
+            validator: function(value) {
+                return value >= 1 && value <= 6;
+            },
+            message: props => `${props.value} should be a value between 1 and 6 inclusive.`
+        }
+    },
+    accessories: [{ type: mongoose.Types.ObjectId, ref: 'Accessories' }]
 });
 
 /*
