@@ -14,24 +14,3 @@ databaseConnector().then(() => {
 
     app.listen(port, console.log(`Listening on port ${port}! Now its up to you...`));
 }).catch(console.error);
-
-
-/*
-const mongodb = require('mongodb');
-const { MongoClient } = mongodb;
-const connectionString = 'mongodb://localhost:27017';
-const client = new MongoClient(connectionString);
-
-client.connect(function(err) {
-    const db = client.db('test');
-    const usersCollection = db.collection('users');
-
-    usersCollection.insert({ name: 'Gosho', age: 23, hobbies: ['programming', 'swimming'] }, (err, result) => {
-        usersCollection.findOne({ name: 'Gosho' }).then(user => {
-            console.log(user._id + ' ' + user.name);
-        }) 
-    });
-
-    usersCollection.deleteOne({ name: 'Gosho' }).then(console.log)
-})
-*/
