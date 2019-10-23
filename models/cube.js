@@ -35,7 +35,8 @@ const cubeModelSchema = new mongoose.Schema({
             message: props => `${props.value} should be a value between 1 and 6 inclusive.`
         }
     },
-    accessories: [{ type: mongoose.Types.ObjectId, ref: 'Accessories' }]
+    accessories: [{ type: mongoose.Types.ObjectId, ref: 'Accessories' }],
+    creatorId: { type: mongoose.Types.ObjectId, ref: 'User' }
 });
 
 /*
