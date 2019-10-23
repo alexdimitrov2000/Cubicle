@@ -10,7 +10,7 @@ const cubeModelSchema = new mongoose.Schema({
         required: true,
         validate: {
             validator: function(value) {
-                return value.length <= 70;
+                return value.length <= 370;
             },
             message: props => `${props.value} should be maximum 70 characters long.`
         }
